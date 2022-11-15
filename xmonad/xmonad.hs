@@ -223,7 +223,7 @@ main :: IO ()
 main = do
     xmonad
       $ Hacks.javaHack
-      $ fullscreenSupport
+      $ fullscreenSupportBorder
       $ ewmh
       $ withUrgencyHook NoUrgencyHook
       $ docks
@@ -450,10 +450,10 @@ myLayoutHook =   avoidStruts
                $ mkToggle (single FULL) 
                $ myLayouts
              where
-             myLayouts =       tall
-                           ||| grid
-                           ||| threeCol
+             myLayouts =       grid
                            ||| threeColMid
+                           ||| tall
+                           ||| threeCol
                            ||| tabs
 
 tall     = renamed [Replace "MasterStack"]
